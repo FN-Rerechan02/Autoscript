@@ -15,6 +15,7 @@
 - [Port List](#Port-List)
 - [Path List](#Path-List)
 - [ALPN List](#Alpn)
+- [Rest API](#API)
 
 > [**Demo Menu**](#Menu)
 
@@ -32,7 +33,7 @@ Perfect for VPN providers
 
 ### Tahap 1
 ```shell
-apt update ; apt install curl wget tmux gnupg -y
+apt update ; apt install curl wget tmux gnupg screen perl -y
 ```
 
 ### Tahap 2
@@ -46,11 +47,11 @@ apt update ; apt install curl wget tmux gnupg -y
 |-------------------------------------------------------------|--------------------------------------------------------------|
 | Cloudflare SSL                                              | All CDN Support                                              |
 | Full CLI Dashboard                                          | Multi Port Multi Protocol                                    |
-| Load Balance [`80`/`443`] (Modular: Enabled)               | SSH Limit Login (Disconnect Last Session Only)              |
-| Routing [`V2ray`/`XRay`] (Modular: Disabled)               | ON / OFF Service Menu                                       |
+| Load Balance [`80`/`443`] (Modular: Enabled)                | SSH Limit Login (Disconnect Last Session Only)               |
+| Routing [`V2ray`/`XRay`] (Modular: Disabled)                | ON / OFF Service Menu                                        |
 | Run Services Based on Existing Account                      | Bypass Traffic Proxy & Anonymous Proxy                       |
 | Telegram Bot Notification                                   | Admin Menu for Granting Root Access                          |
-| Limit Device & Quota [`XRay`/`NoobzVPN`/`SSH`]              | Uninstall or Rebuild VPS Menu [`select OS`]                 |
+| Limit Device & Quota [`XRay`/`NoobzVPN`/`SSH`]              | Uninstall or Rebuild VPS Menu [`select OS`]                  |
 | Auto Expired Account [`All Protocol`]                       | Detailed Usage Quota / Bandwidth Info                        |
 | Client Details & Expired Script Info                        | Argo Tunnel Cloudflare Multi Server [`SSH`/`XRAY`] (Disabled)|
 | Change Server Timezone                                      | Change Dropbear Banner Menu                                  |
@@ -97,7 +98,7 @@ apt update ; apt install curl wget tmux gnupg -y
 ## Port List
 ---
 | Service               | Port                                           |
-|------------------------|------------------------------------------------|
+|-----------------------|------------------------------------------------|
 | OpenSSH               | 22, 443, 3303, 2053, 80, 777                   |
 | Dropbear              | 22, 443, 2053, 109, 111, 80, 777               |
 | UDP Custom            | 1-65535                                        |
@@ -106,11 +107,11 @@ apt update ; apt install curl wget tmux gnupg -y
 | HTTP Proxy & Squid    | 3128 (Limit Access)                            |
 | Open HTTP Puncher     | 8181, 8282, 8383                               |
 | Socks5 Proxy          | 1080                                           |
-| SSH SlowDNS / DNSTT  | 5300, 443, 80, 2053                            |
-| SSH TLS/SNI       | 443, 8443, 8999, 9443, 9755, 400-777           |
+| SSH SlowDNS / DNSTT   | 5300, 443, 80, 2053                            |
+| SSH TLS/SNI           | 443, 8443, 8999, 9443, 9755, 400-777           |
 | HTTP WebSocket        | 80-108, 2082, 8000, 8080-8180, 2084-2199       |
-| HTTP(S) WebSocket       | 443, 8443, 8999, 9443, 9755, 400-777           |
-| WebSocker Enhanced      | 2080, 2082, 8080, 80, 443, 8443        |
+| HTTP(S) WebSocket     | 443, 8443, 8999, 9443, 9755, 400-777           |
+| WebSocker Enhanced    | 2080, 2082, 8080, 80, 443, 8443                |
 | OpenVPN TCP           | 1194                                           |
 | OpenVPN UDP           | 2200                                           |
 | OpenVPN SlowDNS       | 25000                                          |
@@ -118,19 +119,29 @@ apt update ; apt install curl wget tmux gnupg -y
 | OpenVPN TLS/SNI       | 443, 8443, 8999, 9443, 9755, 400-777           |
 | Xray TCP              | 2083                                           |
 | Xray SlowDNS          | 5300                                           |
-| Xray HTTP        | 80-108, 2082, 8000, 8080-8180, 2084-2199       |
-| Xray HTTP(S)    | 443, 8443, 8999, 9443, 9755, 400-777           |
+| Xray HTTP             | 80-108, 2082, 8000, 8080-8180, 2084-2199       |
+| Xray HTTP(S)          | 443, 8443, 8999, 9443, 9755, 400-777           |
 | NoobzVPN TLS/SNI      | 443, 8443, 8999, 9443, 9755, 400-777           |
-| NoobzVPN HTTP    | 80-108, 2082, 8000, 8080-8180, 2084-2199       |
-| NoobzVPN HTTP(S)     | 443, 8443, 8999, 9443, 9755, 400-777           |
+| NoobzVPN HTTP         | 80-108, 2082, 8000, 8080-8180, 2084-2199       |
+| NoobzVPN HTTP(S)      | 443, 8443, 8999, 9443, 9755, 400-777           |
 | ShadowSocks TLS       | 2443 (+1)                                      |
 | ShadowSocks HTTP      | 3443 (+1)                                      |
+| UDP Zivpn             | 1-65535                                        |
 | Hysteria1             | Random                                         |
 | Hysteria2             | Random                                         |
 | SlowUDP               | Random                                         |
 | Wireguard (WARP)      | 51820                                          |
 | Argo Tunnel HTTP      | 80, 8080, 8880, 2052, 2082, 2086, 2095         |
-| Argo Tunnel HTTP(S)    | 443, 2053, 2083, 2087, 2096, 8443              |
+| Argo Tunnel HTTP(S)   | 443, 2053, 2083, 2087, 2096, 8443              |
+
+
+## SOON PROTOCOL & PORT
+| Service               | Port                                           |
+|-----------------------|------------------------------------------------|
+| NoobzVPN Hopping Port | `-`                                            |
+| Softether VPN         | `-`                                            |
+| Wireguard             | `-`                                            |
+| Chisell Proxy         | `-`                                            |
 ---
 
 ## Path List
@@ -138,7 +149,7 @@ apt update ; apt install curl wget tmux gnupg -y
 | Service         | Path 1         | Path 2         | Path 3         | Path 4        |
 |-----------------|----------------|----------------|----------------|---------------|
 | SSH             | `/`            | `/custom`      | `/whatever`    | `/ssh`        |
-| OpenVPN         | `/`            | `/custom`      | `/whatever`    | `/noobz`    |
+| OpenVPN         | `/`            | `/custom`      | `/whatever`    | `/noobz`      |
 | NoobzVPN        | `/`            | `/custom`      | `/whatever`    | `none`        |
 | VMess WS        | `/vmessws`     | `/worryfree`   | `/kuota-habis` |               |
 | VLESS WS        | `/vlessws`     |                |                |               |
@@ -159,6 +170,7 @@ apt update ; apt install curl wget tmux gnupg -y
 | Hysteria1       | `/`            | `none`         | `-`            |               |
 | Hysteria2       | `/`            | `none`         | `-`            |               |
 | SlowUDP         | `/`            | `none`         | `-`            |               |
+| UDP Zivpn       | `/`            | `none`         | `-`            |               | 
 | WireGuard  (WARP)   | `/`            | `none`         | `-`            |               |
 ---
 Detail: All Paths Support dynamic Path example: `/ssh` can be `whatever/ssh/whatever` and still connect as long as the word `/ssh` is there.
@@ -169,9 +181,21 @@ Detail: All Paths Support dynamic Path example: `/ssh` can be `whatever/ssh/what
 |------------|----------------------------|
 | HTTP/1.1   | Standard HTTP              |
 | h2         | HTTP/2 (Multiplexing)      |
+
+## Soon ALPN
+| Protocol   | Description                |
+|------------|----------------------------|
 | h3         | HTTP/3 (QUIC-based)        |
 ---
 
+## API
+This project includes an API service running on **port 9000**. This service is configured via the `menu-api` command within the VPS environment.
+
+For comprehensive documentation and details about the API, please visit our GitHub repository:
+
+[![API Documentation](https://img.shields.io/badge/Documentation-View%20on%20GitHub-blue?style=for-the-badge&logo=github)](https://github.com/FN-Rerechan02/API)
+
+---
 ## Menu
 ![FN Project](menu.png)
 
